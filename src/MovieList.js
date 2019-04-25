@@ -5,10 +5,22 @@ function MovieList(props) {
     return (
         <ul>
             {
-                props.movies.map((movie, i) => <li key={i}>{movie}</li>)
+                props.movies.map((movie, i) => {
+                    return (
+                        <li key={i}>
+                            <a
+                                href="#"
+                                onClick={() => {
+                                    props.handleClick(movie);
+                                }}
+                            >
+                                {movie}
+                            </a>
+                        </li>
+                )})
             }
         </ul>
-    )
+    );
 }
 
 MovieList.propTypes = {
